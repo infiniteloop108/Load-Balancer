@@ -18,6 +18,10 @@ var load_balancer = http.createServer(function (req, res) {
 	pending[server]+=1
 	console.log("Sending request to server " + server);
 	proxy.web(req, res, servers[server]);
+	proxy.on('error', function (err, req, res) {
+		res.writeHead(500, {'Content-Type': 'text/plain'});
+		res.end('Something went wrong. That\'s all we know');
+	});
 	res.on('finish', function() {
 		pending[server]-=1
 	});
