@@ -33,7 +33,11 @@ Click run. You can see a statistics graph in Response Time Graph. You can also s
 ## Some Results
 
 We ran some tests.
+
 1. Using no load balancer, sending requests on localhost - g1.png
+
 2. Using no load balancer, sending requests on aws - g2.png
+
 3. Using load balancer, with two servers on localhost - g3.png
+
 4. Using load balancer, with one server locally, one on aws - g4.png
