@@ -9,14 +9,17 @@ class RequestHandler(BaseHTTPRequestHandler):
         request_path = self.path
 	path = request_path[0:5];
 	if path != "/sum?":
-		self.send_response(400)
+		self.send_response(404)
+		self.end_headers()
 		return
 	if request_path[5] != "a":
-		self.send_response(400)
+		self.send_response(404)
+		self.end_headers()
 		return
 	b_ind = request_path.find("b")
 	if b_ind == -1:
-		self.send_response(400)
+		self.send_response(404)
+		self.end_headers()
 		return
 	
 	try:
@@ -30,6 +33,7 @@ class RequestHandler(BaseHTTPRequestHandler):
 		self.wfile.write(body);
 	except:
 		self.send_response(500)
+		self.end_headers()
 
 
 if len(sys.argv) != 3:
