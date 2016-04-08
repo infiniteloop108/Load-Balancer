@@ -28,8 +28,12 @@ Now any request made to load balancer IP will be redirected to one of the above 
 First install jmeter using `brew install jmeter` (use apt-get on linux)
 Open the Test Load Balancer.jmx file in jmeter
 Verify the address to which the request is sent (in HTTPRequest and HTTPRequestDefault)
-Click run. You can see a statistics graph as stats.png
+Click run. You can see a statistics graph in Response Time Graph. You can also save the graph by clicking 'Save graph'
 
 ## Some Results
 
 We ran some tests.
+1. Using no load balancer, sending requests on localhost - g1.png
+2. Using no load balancer, sending requests on aws - g2.png
+3. Using load balancer, with two servers on localhost - g3.png
+4. Using load balancer, with one server locally, one on aws - g4.png

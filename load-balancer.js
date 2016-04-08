@@ -5,7 +5,8 @@ var http = require('http');
 
 var servers = [
 { target : 'http://127.0.0.1:8001'},
-{ target : 'http://127.0.0.1:8002'},
+//{ target : 'http://127.0.0.1:8002'},
+{ target : 'http://52.10.123.178:8000'},
 ];
 
 var pending = [0,0]
