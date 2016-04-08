@@ -22,8 +22,12 @@ class RequestHandler(BaseHTTPRequestHandler):
 	try:
 		a=int(request_path[7:b_ind-1])
 		b=int(request_path[b_ind+2:])
-		self.wfile.write(str(a+b) + "\r\n");
+		body = str(a+b);
 		self.send_response(200);
+		self.send_header('Content-type', 'text/plaintext');
+		self.send_header('Content-length', str(len(body)) )
+		self.end_headers();
+		self.wfile.write(body);
 	except:
 		self.send_response(500)
 
