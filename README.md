@@ -30,6 +30,8 @@ Open the Test Load Balancer.jmx file in jmeter
 Verify the address to which the request is sent (in HTTPRequest and HTTPRequestDefault)
 Click run. You can see a statistics graph in Response Time Graph. You can also save the graph by clicking 'Save graph'
 
+You might run out of memory for jmeter. Run this `HEAP="-Xms512m -Xmx4096m"` to set your heap size to 4gb
+
 ## Some Results
 
 We ran some tests.
